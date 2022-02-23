@@ -5,6 +5,22 @@ VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Barbarian_Quest_API", "Barbarian_Quest_API\Barbarian_Quest_API.csproj", "{05E8523B-2ED2-4F70-8882-9DB9816303C0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{1470B309-E162-48B6-A836-21E4CA57460C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application(services)", "2 - Application(services)", "{F17079FB-2F91-4240-AB26-F3BB16A17791}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{2DDFD72D-E9A0-4A72-B455-AA6D59B30F2D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - Infrastructure", "{10001508-1701-4900-8D6E-658F30F59FF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BQuest.Services", "BQuest.Services\BQuest.Services.csproj", "{0E3A6A33-2391-47A2-8BC0-7C2270491C51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BQuest.Domain", "BQuest.Domain\BQuest.Domain.csproj", "{3B450709-4DB2-4673-9939-4E8833094F41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BQuest.Infrastructure.Data", "BQuest.Infrastructure.Data\BQuest.Infrastructure.Data.csproj", "{DF44C26B-9391-4662-B06B-81F88F0FFBE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BQuest.Infrastructure.IoC", "BQuest.Infrastructure.IoC\BQuest.Infrastructure.IoC.csproj", "{8033C503-CDDA-4BDE-86B5-45507963DC67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +31,32 @@ Global
 		{05E8523B-2ED2-4F70-8882-9DB9816303C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05E8523B-2ED2-4F70-8882-9DB9816303C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05E8523B-2ED2-4F70-8882-9DB9816303C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E3A6A33-2391-47A2-8BC0-7C2270491C51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E3A6A33-2391-47A2-8BC0-7C2270491C51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E3A6A33-2391-47A2-8BC0-7C2270491C51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E3A6A33-2391-47A2-8BC0-7C2270491C51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B450709-4DB2-4673-9939-4E8833094F41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B450709-4DB2-4673-9939-4E8833094F41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B450709-4DB2-4673-9939-4E8833094F41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B450709-4DB2-4673-9939-4E8833094F41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF44C26B-9391-4662-B06B-81F88F0FFBE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF44C26B-9391-4662-B06B-81F88F0FFBE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF44C26B-9391-4662-B06B-81F88F0FFBE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF44C26B-9391-4662-B06B-81F88F0FFBE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8033C503-CDDA-4BDE-86B5-45507963DC67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8033C503-CDDA-4BDE-86B5-45507963DC67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8033C503-CDDA-4BDE-86B5-45507963DC67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8033C503-CDDA-4BDE-86B5-45507963DC67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{05E8523B-2ED2-4F70-8882-9DB9816303C0} = {1470B309-E162-48B6-A836-21E4CA57460C}
+		{0E3A6A33-2391-47A2-8BC0-7C2270491C51} = {F17079FB-2F91-4240-AB26-F3BB16A17791}
+		{3B450709-4DB2-4673-9939-4E8833094F41} = {2DDFD72D-E9A0-4A72-B455-AA6D59B30F2D}
+		{DF44C26B-9391-4662-B06B-81F88F0FFBE0} = {10001508-1701-4900-8D6E-658F30F59FF2}
+		{8033C503-CDDA-4BDE-86B5-45507963DC67} = {10001508-1701-4900-8D6E-658F30F59FF2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {23D54DC1-4D62-4DE5-A5B4-878A4392F11A}

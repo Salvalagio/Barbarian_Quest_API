@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="1 - Interfaces\" />
+    <Folder Include="3 - DTO\" />
+  </ItemGroup>
+
+</Project>
