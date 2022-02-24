@@ -2,7 +2,7 @@
 
 namespace BQuest.Services.DTO
 {
-    public class Character
+    public class Character : Attributes
     {
         public string Name { get; set; }
 
@@ -11,5 +11,6 @@ namespace BQuest.Services.DTO
         public string Race { get; set; }
 
         public GenderType Gender { get; set; }
+
     }
 }
