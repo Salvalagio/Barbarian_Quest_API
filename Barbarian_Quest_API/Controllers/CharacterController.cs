@@ -28,37 +28,47 @@ namespace Barbarian_Quest_API.Controllers
 
         [HttpPost]
         [Route("Create")]
-        public IActionResult Create([FromBody] Player player)
+        public IActionResult Create([FromBody] Character player)
         {
-            Dictionary<int, object> playerValidation = player.Valid();
+            (bool,List<string>) playerValidation = player.Valid();
 
-            if (!(bool)playerValidation.GetValueOrDefault(1))
+            if (!playerValidation.Item1)
                 return BadRequest(new ErrorMessage($"One of the following attributes are wrong, please verify." + 
-                                    $"ps: try to verify these = {JsonSerializer.Serialize(playerValidation.GetValueOrDefault(2))}", player,null));
+                                    $"ps: try to verify these = {JsonSerializer.Serialize(playerValidation.Item2)}", player));
 
             return Ok();
         }
 
         [HttpGet]
         [Route("ConsultById")]
-        public IActionResult ConsultById(int Id)
+        public IActionResult ConsultById(int playerId)
         {
+            if (playerId <= 0)
+                return BadRequest(new ErrorMessage($"PlayerId that you search are incorrect. Id: {playerId}"));
 
             return Ok();
         }
 
         [HttpPut]
         [Route("AlterAttributes")]
-        public IActionResult AlterAttributes([FromBody] Attributes attributes, string playerName)
+        public IActionResult AlterAttributes([FromBody] Attributes attributes, int playerId)
         {
+            var attributesValidation = (true,new List<string>());
+            attributes.VerifyAttributes(ref attributesValidation);
+
+            if (!attributesValidation.Item1)
+                return BadRequest(new ErrorMessage($"One of the following Attributes are wrong, please verify." +
+                                 $"{JsonSerializer.Serialize(attributesValidation.Item2)}"));
 
             return Ok();
         }
 
         [HttpDelete]
         [Route("Delete")]
-        public IActionResult Delete(int Id)
+        public IActionResult Delete(int playerId)
         {
+            if (playerId <= 0)
+                return BadRequest(new ErrorMessage($"PlayerId that you search are incorrect. Id: {playerId}"));
 
             return Ok();
         }
