@@ -3,6 +3,7 @@ using BQuest.Services;
 using BQuest.Services.Interfaces;
 using BQuest.Domain;
 using BQuest.Infrastructure.Data;
+using AutoMapper; // learn how to use that thing.
 
 namespace BQuest.Infrastructure.IoC
 {

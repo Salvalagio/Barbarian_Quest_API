@@ -28,20 +28,33 @@ namespace Barbarian_Quest_API.Controllers
 
         [HttpPost]
         [Route("Create")]
-        public IActionResult Create([FromBody] Character player)
+        public IActionResult Create([FromBody] Character newCharacter)
         {
-            (bool,List<string>) playerValidation = player.Valid();
+            (bool,List<string>) playerValidation = newCharacter.Valid();
 
             if (!playerValidation.Item1)
                 return BadRequest(new ErrorMessage($"One of the following attributes are wrong, please verify." + 
-                                    $"ps: try to verify these = {JsonSerializer.Serialize(playerValidation.Item2)}", player));
+                                    $"ps: try to verify these = {JsonSerializer.Serialize(playerValidation.Item2)}", newCharacter));
 
             return Ok();
         }
 
         [HttpGet]
-        [Route("ConsultById")]
-        public IActionResult ConsultById(int playerId)
+        [Route("ConsultByName")]
+        public IActionResult ConsultByName(string characterName)
+        {
+            if (string.IsNullOrEmpty(characterName))
+                return BadRequest(new ErrorMessage($"PlayerName that you search are incorrect. Name: {characterName}"));
+
+            if (_consultCharacterService.ConsultValidName(characterName))
+                return Ok("Caracter name available.");
+            else
+                return Ok("Caracter name unavailable.");
+        }
+
+        [HttpGet]
+        [Route("ConsultByPlayer")]
+        public IActionResult ConsultByPlayerId(int playerId)
         {
             if (playerId <= 0)
                 return BadRequest(new ErrorMessage($"PlayerId that you search are incorrect. Id: {playerId}"));
