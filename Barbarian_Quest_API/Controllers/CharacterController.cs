@@ -1,9 +1,8 @@
-﻿using BQuest.Services.DTO;
-using BQuest.Services.Enumerators;
-using BQuest.Services.Interfaces;
+﻿using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
+using BQuest.Domain.Models.DTO;
+using BQuest.Services.Interfaces;
 using System.Collections.Generic;
-using System.Text.Json;
 
 namespace Barbarian_Quest_API.Controllers
 {
@@ -46,7 +45,19 @@ namespace Barbarian_Quest_API.Controllers
             if (string.IsNullOrEmpty(characterName))
                 return BadRequest(new ErrorMessage($"PlayerName that you search are incorrect. Name: {characterName}"));
 
-            if (_consultCharacterService.ConsultValidName(characterName))
+            bool validName = false;
+
+            try
+            {
+                validName = _consultCharacterService.ConsultValidName(characterName);
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(ex);
+            }
+
+
+            if (validName)
                 return Ok("Caracter name available.");
             else
                 return Ok("Caracter name unavailable.");

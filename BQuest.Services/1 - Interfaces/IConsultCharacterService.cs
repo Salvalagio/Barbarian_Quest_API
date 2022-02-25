@@ -1,4 +1,4 @@
-﻿using BQuest.Services.DTO;
+﻿using BQuest.Domain.Models.DTO;
 using System.Collections.Generic;
 
 namespace BQuest.Services.Interfaces
@@ -6,11 +6,11 @@ namespace BQuest.Services.Interfaces
     public interface IConsultCharacterService
     {
 
-        List<Character> ConsultPlayerId(int id);
+        List<Character> ConsultByPlayerId(int id);
 
         bool ConsultValidName(string name);
 
-        T ConsultPlayerId<T>(int id, string properyName);
+        T ConsultPlayerProperty<T>(int id, string properyName);
 
     }
 }
