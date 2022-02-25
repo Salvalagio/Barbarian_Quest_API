@@ -5,11 +5,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Folder Include="1 - Interfaces\" />
-		<Folder Include="2 - Models\" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<ProjectReference Include="..\BQuest.Infrastructure.Data\BQuest.Infrastructure.Data.csproj" />
 	</ItemGroup>
 
