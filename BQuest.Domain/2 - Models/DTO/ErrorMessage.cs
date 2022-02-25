@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BQuest.Services.DTO
+namespace BQuest.Domain.Models.DTO
 {
     public class ErrorMessage
     {

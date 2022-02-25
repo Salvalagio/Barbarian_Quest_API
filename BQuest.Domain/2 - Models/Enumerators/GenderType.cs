@@ -1,5 +1,5 @@
 ﻿
-namespace BQuest.Services.Enumerators
+namespace BQuest.Domain.Models.Enumerators
 {
     public enum GenderType
     {

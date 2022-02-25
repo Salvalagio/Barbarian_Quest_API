@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BQuest.Services.DTO
+namespace BQuest.Domain.Models.DTO
 {
     public class Attributes
     {

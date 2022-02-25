@@ -1,7 +1,7 @@
-﻿using BQuest.Services.Enumerators;
+﻿using BQuest.Domain.Models.Enumerators;
 using System.Collections.Generic;
 
-namespace BQuest.Services.DTO
+namespace BQuest.Domain.Models.DTO
 {
     public class Person
     {
